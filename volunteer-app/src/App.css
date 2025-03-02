@@ -42,7 +42,23 @@
 }
 
 
-#top-bar {
-  height: 50px;
-  background-color: black;
+.navbar ul {
+  list-style-type: none;
+  background-color: rgb(48, 153, 244);
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.navbar a {
+  color:yellow;
+  text-decoration: none;
+  padding:15px;
+  display: block;
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: rgb(119, 184, 240);
+  float: left;
 }
