@@ -7,14 +7,13 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 function App() {
   return (
     <>
-    <div>
+    <div className = "App">
       <Router>
       <Navbar />
       <Routes>
-        <Route path="/" exact component={Home}/>
+        <Route path="/" exact element={Home}/>
       </Routes>
       </Router>
-      <h1 className = "top-left"> Welcome to the Webpage </h1>
     </div>
     </>
   );
