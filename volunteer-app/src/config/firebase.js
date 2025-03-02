@@ -91,19 +91,16 @@ async function deleteEvent(eventId) {
   }
 }
 
-// Create 5 example usage
-deleteEvent("event3");
-createEvent("event1", "Community Cleanup", "Green Team", "Help clean up the local park", "2022-01-15", "Central Park", "cleanup.jpg");
-createEvent("event2", "Food Drive", "Food Bank", "Collect canned goods for the homeless shelter", "2022-02-20", "Downtown Plaza", "fooddrive.jpg");
-createEvent("event3", "Blood Drive", "Red Cross", "Donate blood to save lives", "2022-03-25", "City Hospital", "blooddrive.jpg");
-createEvent("event4", "Animal Shelter Volunteer", "Paws & Claws", "Walk dogs and play with cats at the shelter", "2022-04-30", "Pet Haven", "animalshelter.jpg");
-createEvent("event5", "Senior Center Visit", "Golden Years Home", "Spend time with elderly residents", "2022-05-31", "Sunset Village", "seniorcenter.jpg");
+//gets the size of the collection
+async function getCollectionSize(collection) {
+  const snapshot = await getDocs(collection);
+  return snapshot.size;
+}
 
-
-// Read the 5 events
-readEvent("event1");
-readEvent("event2");
-readEvent("event3");
-readEvent("event4");
-readEvent("event5");
-
+// Export the event functions for use in other modules
+export { createEvent, readEvent, updateEvent, deleteEvent, getCollectionSize };
+// Import the necessary functions from the Firebase SDK
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore, doc, setDoc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
