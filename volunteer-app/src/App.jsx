@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/navbar";
 import Home from "./pages/Home";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
     <div>
       <Router>
       <Navbar />
-      <Switch>
+      <Routes>
         <Route path="/" exact component={Home}/>
-      </Switch>
+      </Routes>
       </Router>
       <h1 className = "top-left"> Welcome to the Webpage </h1>
     </div>
