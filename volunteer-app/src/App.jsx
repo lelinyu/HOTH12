@@ -9,9 +9,10 @@ function App() {
         <li><a href="">Opportunities</a></li>
         <li><a href="">Saved</a></li>
       </ul>
-    </nav><div>
-        <h1> Welcome to the Webpage </h1>
-      </div>
+    </nav>
+    <div>
+      <h1 className = "top-left"> Welcome to the Webpage </h1>
+    </div>
     </>
   );
 }
