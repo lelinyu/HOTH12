@@ -40,7 +40,7 @@ function Opportunity() {
         eventData.location,
         eventData.picture
       );
-      alert("Event successfully added!");
+      alert("Event successfully added! Please Reload Page to see changes.");
       setEventData({
         name: "",
         organizer: "",
