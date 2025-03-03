@@ -113,5 +113,19 @@ async function getCollectionIds() {
   }
 }
 
+async function getAllOpportunities() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "Opportunities"));
+    const opportunities = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    return opportunities;
+  } catch (error) {
+    console.error("Error fetching opportunities:", error);
+    return [];
+  }
+}
+
 // Export the event functions for use in other modules
-export { createEvent, readEvent, updateEvent, deleteEvent, getCollectionIds };
+export { createEvent, readEvent, updateEvent, deleteEvent, getCollectionIds, getAllOpportunities };

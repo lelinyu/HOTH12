@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { createEvent } from "../config/firebase"; // Ensure this function correctly writes to Firestore
+import React, { useState, useEffect } from "react";
+import { createEvent, getAllOpportunities } from "../config/firebase"; 
 import "../styles/Opportunity.css";
 
 function Opportunity() {
@@ -13,6 +13,16 @@ function Opportunity() {
     picture: "",
   });
 
+  const [opportunities, setOpportunities] = useState([]);
+
+  useEffect(() => {
+    const fetchOpportunities = async () => {
+      const events = await getAllOpportunities();
+      setOpportunities(events);
+    };
+    fetchOpportunities();
+  }, []);
+
   const openPopup = () => setShowPopup(true);
   const closePopup = () => setShowPopup(false);
 
@@ -24,8 +34,10 @@ function Opportunity() {
     try {
       await createEvent(eventData.name, eventData.organizer, eventData.description, eventData.date, eventData.location, eventData.picture);
       alert("Event successfully added!");
-      setEventData({ name: "", organizer: "", description: "", date: "", location: "", picture: "" }); // Reset form
+      setEventData({ name: "", organizer: "", description: "", date: "", location: "", picture: "" });
       closePopup();
+      const updatedOpportunities = await getAllOpportunities(); // Refresh the list
+      setOpportunities(updatedOpportunities);
     } catch (error) {
       console.error("Error adding event:", error);
     }
@@ -53,6 +65,19 @@ function Opportunity() {
           </div>
         </div>
       )}
+
+      <div className="opportunities-list">
+        {opportunities.map((opportunity) => (
+          <div key={opportunity.id} className="opportunity-card">
+            <h3>{opportunity.name}</h3>
+            <p><strong>Organizer:</strong> {opportunity.organizer}</p>
+            <p><strong>Date:</strong> {opportunity.date}</p>
+            <p><strong>Location:</strong> {opportunity.location}</p>
+            <p>{opportunity.description}</p>
+            {opportunity.picture && <img src={opportunity.picture} alt={opportunity.name} />}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
