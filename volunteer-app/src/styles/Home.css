@@ -20,7 +20,11 @@ html, body {
     flex-direction: column;
     justify-content: center; /* Centers vertically */
     align-items: center; /* Centers horizontally */
+<<<<<<< HEAD
     min-height: 100vh; /* Keeps section at full viewport height */
+=======
+    min-height: 225vh; /* Keeps section at full viewport height */
+>>>>>>> refs/remotes/origin/main
     text-align: center;
     padding: 20px;
   }

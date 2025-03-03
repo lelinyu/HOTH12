@@ -16,8 +16,6 @@ function navbar() {
 
             <Link to="/opportunities"> Opportunities </Link>
 
-            <Link to="/saved"> Saved </Link>
-
         </div>
     </div>
     )
