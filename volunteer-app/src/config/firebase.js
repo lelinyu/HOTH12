@@ -115,6 +115,3 @@ async function getCollectionIds() {
 
 // Export the event functions for use in other modules
 export { createEvent, readEvent, updateEvent, deleteEvent, getCollectionIds };
-
-
-
