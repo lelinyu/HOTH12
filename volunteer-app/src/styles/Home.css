@@ -3,6 +3,24 @@ body {
     color: rgb(255, 255, 255);
   }
 
+<<<<<<< HEAD
+  .center{
+    position: absolute;
+    top: 400px;
+    left: 750px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .mission-image {
+    display: block;  /* Prevents inline behavior */
+    margin: 20px auto; /* Centers image and adds spacing */
+    width: 100%; 
+    max-width: 500px;
+    border-radius: 10px;
+  }
+  
+=======
 .center{
   position: absolute;
   top: 300px;
@@ -10,3 +28,4 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+>>>>>>> refs/remotes/origin/main
