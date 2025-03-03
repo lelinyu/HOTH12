@@ -14,29 +14,8 @@ function Opportunity() {
             <h1>Opportunities Page</h1>
         </div>
       <button onClick={openPopup}>Add Event</button>
-
-      {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup-content">
-            <button className="close-button" onClick={(e) => {e.stopPropagation(); closePopup();}}>
-              Close
-            </button>
-            <AddEvent />
-          </div>
-        </div>
-      )}
     </div>
   );
 }
 
 export default Opportunity;
-
-<button
-  className="close-button"
-  onClick={(e) => {
-    e.stopPropagation();
-    closePopup();
-  }}
->
-  Close
-</button>
