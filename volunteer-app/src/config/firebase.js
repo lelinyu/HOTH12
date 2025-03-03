@@ -1,7 +1,7 @@
 // Import the necessary functions from the Firebase SDK
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, doc, setDoc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
+import { getFirestore, doc, setDoc, getDoc, getDocs, collection, updateDoc, deleteDoc } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
@@ -91,11 +91,21 @@ async function deleteEvent(eventId) {
   }
 }
 
-//gets the size of the collection
-async function getCollectionSize(collection) {
-  const snapshot = await getDocs(collection);
-  return snapshot.size;
+// Gets all the Ids of the Opportunities in the collection
+async function getCollectionIds() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "Opportunities"));
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id);
+    });
+  } catch (error) {
+    console.error("Error getting collection size:", error);
+  }
 }
 
 // Export the event functions for use in other modules
-export { createEvent, readEvent, updateEvent, deleteEvent, getCollectionSize };
+export { createEvent, readEvent, updateEvent, deleteEvent, getCollectionIds };
+
+
+
+
