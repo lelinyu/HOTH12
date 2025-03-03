@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {} from 'react';
 import BearLogo from "../assets/bruinbear.jpeg";
 import {Link} from "react-router-dom";
 import "../styles/navbar.css";
