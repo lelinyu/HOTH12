@@ -99,8 +99,3 @@ async function getCollectionSize(collection) {
 
 // Export the event functions for use in other modules
 export { createEvent, readEvent, updateEvent, deleteEvent, getCollectionSize };
-// Import the necessary functions from the Firebase SDK
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore, doc, setDoc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
