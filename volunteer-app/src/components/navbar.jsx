@@ -1,5 +1,5 @@
 import React, {} from 'react';
-import BearLogo from "../assets/bruinbear.jpeg";
+import BearLogo from "../assets/leaf.png";
 import {Link} from "react-router-dom";
 import "../styles/navbar.css";
 
