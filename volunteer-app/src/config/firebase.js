@@ -64,7 +64,7 @@ async function readEvent(eventId) {
     const eventRef = doc(db, "Opportunities", eventId);
     const docSnap = await getDoc(eventRef);
     if (docSnap.exists()) {
-      console.log("Event data:", docSnap.data());
+      return docSnap.data();
     } else {
       console.log("No data available for event:", eventId);
     }
