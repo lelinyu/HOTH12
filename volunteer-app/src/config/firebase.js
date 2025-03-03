@@ -29,7 +29,17 @@ export { auth, db, storage };
  * Create (Write) a new event in Firestore.
  * This function sets a document in the "events" collection with the provided eventID.
  */
-async function createEvent(eventID, eventName, organizerName, description, date, location, picture) {
+async function createEvent(
+  eventName,
+  organizerName,
+  description,
+  date,
+  location,
+  picture
+) {
+  // Generate a unique ID using the built-in crypto.randomUUID()
+  const eventID = crypto.randomUUID();
+
   try {
     await setDoc(doc(db, "Opportunities", eventID), {
       name: eventName,
@@ -39,7 +49,7 @@ async function createEvent(eventID, eventName, organizerName, description, date,
       location: location,
       picture: picture
     });
-    console.log("Event created successfully.");
+    console.log("Event created successfully with ID:", eventID);
   } catch (error) {
     console.error("Error creating event:", error);
   }
@@ -105,7 +115,6 @@ async function getCollectionIds() {
 
 // Export the event functions for use in other modules
 export { createEvent, readEvent, updateEvent, deleteEvent, getCollectionIds };
-
 
 
 

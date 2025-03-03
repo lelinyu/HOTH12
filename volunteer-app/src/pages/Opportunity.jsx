@@ -12,7 +12,6 @@ function Opportunity() {
     <div>
         <div className = "opp-header">
             <h1>Opportunities Page</h1>
-            <p>Here you will find various opportunities.</p>
         </div>
       <button onClick={openPopup}>Add Event</button>
 
