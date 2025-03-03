@@ -65,7 +65,7 @@ function Opportunity() {
       {showPopup && (
         <div className="popup">
           <div className="popup-content">
-            <h2>Add Event</h2>
+            <h2 id = "Event-Button">Add Event</h2>
             <input
               type="text"
               name="name"

@@ -20,7 +20,7 @@ html, body {
     flex-direction: column;
     justify-content: center; /* Centers vertically */
     align-items: center; /* Centers horizontally */
-    min-height: 250vh; /* Keeps section at full viewport height */
+    min-height: 225vh; /* Keeps section at full viewport height */
     text-align: center;
     padding: 20px;
   }
