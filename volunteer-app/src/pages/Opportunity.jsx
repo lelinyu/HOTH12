@@ -32,12 +32,24 @@ function Opportunity() {
 
   const handleSubmit = async () => {
     try {
-      await createEvent(eventData.name, eventData.organizer, eventData.description, eventData.date, eventData.location, eventData.picture);
+      await createEvent(
+        eventData.name,
+        eventData.organizer,
+        eventData.description,
+        eventData.date,
+        eventData.location,
+        eventData.picture
+      );
       alert("Event successfully added!");
-      setEventData({ name: "", organizer: "", description: "", date: "", location: "", picture: "" });
+      setEventData({
+        name: "",
+        organizer: "",
+        description: "",
+        date: "",
+        location: "",
+        picture: "",
+      });
       closePopup();
-      const updatedOpportunities = await getAllOpportunities(); // Refresh the list
-      setOpportunities(updatedOpportunities);
     } catch (error) {
       console.error("Error adding event:", error);
     }
@@ -54,12 +66,47 @@ function Opportunity() {
         <div className="popup">
           <div className="popup-content">
             <h2>Add Event</h2>
-            <input type="text" name="name" placeholder="Event Name" value={eventData.name} onChange={handleChange} />
-            <input type="text" name="organizer" placeholder="Organizer Name" value={eventData.organizer} onChange={handleChange} />
-            <input type="text" name="description" placeholder="Description" value={eventData.description} onChange={handleChange} />
-            <input type="date" name="date" value={eventData.date} onChange={handleChange} />
-            <input type="text" name="location" placeholder="Location" value={eventData.location} onChange={handleChange} />
-            <input type="text" name="picture" placeholder="Picture URL" value={eventData.picture} onChange={handleChange} />
+            <input
+              type="text"
+              name="name"
+              placeholder="Event Name"
+              value={eventData.name}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="organizer"
+              placeholder="Organizer Name"
+              value={eventData.organizer}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="description"
+              placeholder="Description"
+              value={eventData.description}
+              onChange={handleChange}
+            />
+            <input
+              type="date"
+              name="date"
+              value={eventData.date}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="location"
+              placeholder="Location"
+              value={eventData.location}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="picture"
+              placeholder="Picture URL"
+              value={eventData.picture}
+              onChange={handleChange}
+            />
             <button onClick={handleSubmit}>Submit</button>
             <button onClick={closePopup}>Close</button>
           </div>
