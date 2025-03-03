@@ -1,5 +1,7 @@
 import React from 'react'
+import volunteer from '../assets/volunteer.jpg'
 import  '../styles/Home.css';
+
 function Home() {
   return (
     <div className = "center">
@@ -13,6 +15,7 @@ function Home() {
       wanting to make a difference, Volunteen is here to help you get involved
        and create a positive impact in your community.
      </p>
+     <img src={volunteer} className='mission-image'/>
       </div>
   )
 }

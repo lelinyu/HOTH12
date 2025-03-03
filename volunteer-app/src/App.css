@@ -14,3 +14,24 @@ body {
 body{
   background-color: rgb(6, 41, 6);
 }
+
+body {
+  background-color: rgb(7, 51, 8);
+  color: rgb(255, 255, 255);
+}
+
+.center{
+  position: absolute;
+  top: 400px;
+  left: 750px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.mission-image {
+  display: block;  /* Prevents inline behavior */
+  margin: 20px auto; /* Centers image and adds spacing */
+  width: 100%; 
+  max-width: 500px;
+  border-radius: 10px;
+}

@@ -13,6 +13,7 @@ function App() {
       <Router>
       <Navbar />
       <Routes>
+        <Route path = "" element = {<Home/>} />
         <Route path= "/home" element={<Home />} />
         <Route path="/opportunities" element={<Opportunity />} />
         <Route path="/saved" element={<Saved />} />
@@ -24,3 +25,4 @@ function App() {
 }
 
 export default App;
+
