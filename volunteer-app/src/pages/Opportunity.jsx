@@ -60,12 +60,12 @@ function Opportunity() {
       <div className="opp-header">
         <h1>Opportunities Page</h1>
       </div>
-      <button onClick={openPopup}>Add Event</button>
+      <button className = "Event-Button" onClick={openPopup}>Add Event</button>
 
       {showPopup && (
         <div className="popup">
           <div className="popup-content">
-            <h2 id = "Event-Button">Add Event</h2>
+            <h2>Add Event</h2>
             <input
               type="text"
               name="name"
