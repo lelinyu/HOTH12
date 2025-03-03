@@ -1,31 +1,35 @@
-body {
-    background-color: rgb(7, 51, 8);
-    color: rgb(255, 255, 255);
+html, body {
+    min-height: 100vh;  /* Ensure the page can grow */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    overflow-y: auto;   /* Allows vertical scrolling */
+    margin: 0;
+    padding: 0;
   }
-
-<<<<<<< HEAD
-  .center{
-    position: absolute;
-    top: 400px;
-    left: 750px;
-    transform: translate(-50%, -50%);
+  
+  .App {
+    width: 100%;
+    min-height: 100vh;  /* Ensures content can expand */
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+  }
+  
+  .center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    min-height: 200vh; /* Keeps section at full viewport height */
     text-align: center;
+    padding: 20px;
   }
-
+  
   .mission-image {
-    display: block;  /* Prevents inline behavior */
-    margin: 20px auto; /* Centers image and adds spacing */
-    width: 100%; 
+    display: block;
+    margin: 20px auto;
+    width: 100%;
     max-width: 500px;
     border-radius: 10px;
   }
   
-=======
-.center{
-  position: absolute;
-  top: 300px;
-  left: 750px;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
->>>>>>> refs/remotes/origin/main
