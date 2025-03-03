@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createEvent, readEvent, updateEvent, deleteEvent, getCollectionSize } from "../config/firebase";
+import { createEvent} from "../config/firebase";
 import "../styles/Opportunity.css";
 
 function Opportunity() {
