@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { createEvent, readEvent, updateEvent, deleteEvent, getCollectionSize } from "../config/firebase";
+import "../styles/Opportunity.css";
 
 function Opportunity() {
   const [showPopup, setShowPopup] = useState(false);
@@ -8,8 +10,10 @@ function Opportunity() {
 
   return (
     <div>
-      <h1>Opportunities Page</h1>
-      <p>Here you will find various opportunities.</p>
+        <div className = "opp-header">
+            <h1>Opportunities Page</h1>
+            <p>Here you will find various opportunities.</p>
+        </div>
       <button onClick={openPopup}>Add Event</button>
 
       {showPopup && (
